@@ -5,3 +5,121 @@
 body{
     background-color: rgb(241, 245, 241);
 }
+
+:root{
+    --primary-color: #EC982F;
+    --secondary-color: #043751;
+    --success-color: #01A601;
+}
+
+/* navbar style starts */
+.navbar{
+    background-color: var(--secondary-color);
+    box-shadow: inherit;
+}
+
+/* logo style starts */
+
+.logo{
+    width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* logo style ends */
+
+.nav-menu {
+    color:var(--primary-color)
+}
+
+.nav-menu:hover{
+    color: #f1f5f9;
+    transition: .5s;
+}
+
+.nav-menu > :active{
+    color: #f1f5f9;
+}
+.menu-underline{
+  display: inline-block;
+  position: relative;
+  color: var(--primary-color);
+}
+
+.menu-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.menu-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.search-input {
+    border: 1px solid var(--primary-color);
+    border-top-left-radius: 5px;
+}
+
+.search-icon {
+    color: var(--primary-color)
+}
+
+/* navbar style ends */
+
+/* profile page style starts */
+
+.title-color {
+    color: var(--secondary-color)
+}
+.update-button {
+    background-color: var(--secondary-color);
+    color: #f1f5f9;
+    font-weight: 500;
+}
+.listing-button {
+    background-color: var(--primary-color);
+    color: #f1f5f9;
+    font-weight: 500;
+}
+.delete{
+    font-weight: 500;
+    color: var(--secondary-color);
+    transition: .25s;
+}
+.delete:hover{
+    color:red
+}
+
+.listing {
+    font-weight: 500;
+  display: inline-block;
+  position: relative;
+  color: var(--primary-color);
+}
+
+.listing::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.listing:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

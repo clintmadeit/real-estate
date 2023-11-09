@@ -17,7 +17,7 @@ import {
   signOutUserStart,
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 export default function Profile() {
   const fileRef = useRef(null);
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -135,7 +135,6 @@ export default function Profile() {
         setShowListingsError(true);
         return;
       }
-
       setUserListings(data);
     } catch (error) {
       setShowListingsError(true);
@@ -163,7 +162,7 @@ export default function Profile() {
   };
   return (
     <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl font-semibold text-center my-7 text-blue-950">
+      <h1 className="text-3xl font-semibold text-center my-7 title-color">
         Profile
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -218,34 +217,31 @@ export default function Profile() {
         />
         <button
           disabled={loading}
-          className="bg-blue-950 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-75"
+          className="update-button rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-75"
         >
           {loading ? "Loading..." : "Update"}
         </button>
         <Link
-          className="bg-yellow-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
+          className="listing-button p-3 rounded-lg uppercase text-center hover:opacity-95 disabled:opacity-75"
           to={"/create-listing"}
         >
           Create Listing
         </Link>
       </form>
       <div className="flex justify-between mt-5">
-        <span
-          onClick={handleDeleteUser}
-          className="text-red-700 cursor-pointer"
-        >
+        <span onClick={handleDeleteUser} className="cursor-pointer delete">
           Delete account
         </span>
-        <span onClick={handleSignOut} className="text-red-700 cursor-pointer">
+        <span onClick={handleSignOut} className="cursor-pointer delete">
           Sign out
         </span>
       </div>
 
       <p className="text-red-700 mt-5">{error ? error : ""}</p>
-      <p className="text-green-700 mt-5">
+      <p className="success mt-5">
         {updateSuccess ? "User is updated successfully!" : ""}
       </p>
-      <button onClick={handleShowListings} className="text-blue-950 w-full">
+      <button onClick={handleShowListings} className="listing w-full">
         Show Listings
       </button>
       <p className="text-red-700 mt-5">

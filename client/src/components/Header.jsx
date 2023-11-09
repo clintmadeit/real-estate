@@ -2,6 +2,7 @@ import { FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import logo from "../assets/images/logo.png";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
@@ -23,17 +24,14 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className="bg-slate-200 shadow-md">
+    <header className="navbar drop-shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
-          <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-            <span className="text-yellow-700">Clint</span>
-            <span className="text-blue-950">Estate</span>
-          </h1>
+          <img src={logo} className="logo" alt="logo" />
         </Link>
         <form
           onSubmit={handleSubmit}
-          className="bg-slate-100 p-3 rounded-lg flex items-center"
+          className="search-input  bg-slate-100 p-3 rounded-lg flex items-center"
         >
           <input
             type="text"
@@ -43,17 +41,17 @@ export default function Header() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button>
-            <FaSearch className="text-yellow-700" />
+            <FaSearch className="search-icon" />
           </button>
         </form>
         <ul className="flex gap-4">
           <Link to="/">
-            <li className="hidden sm:inline text-yellow-700 font-medium hover:underline">
+            <li className="hidden sm:inline nav-menu font-medium menu-underline">
               Home
             </li>
           </Link>
           <Link to="/about">
-            <li className="hidden sm:inline text-yellow-700 font-medium hover:underline">
+            <li className="hidden sm:inline nav-menu font-medium menu-underline">
               About
             </li>
           </Link>
@@ -65,10 +63,7 @@ export default function Header() {
                 alt="profile"
               />
             ) : (
-              <li className=" text-yellow-700 font-medium hover:underline">
-                {" "}
-                Sign in
-              </li>
+              <li className=" nav-menu font-medium menu-underline"> Sign in</li>
             )}
           </Link>
         </ul>
