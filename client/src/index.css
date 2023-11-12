@@ -26,6 +26,21 @@ body{
     flex-wrap: wrap;
 }
 
+/* TODO */
+/*Shrink Logo on scroll*/
+#header .header-title-logo img {
+  transition: max-height 140ms ease-in-out
+}
+#header.shrink {
+  .header-announcement-bar-wrapper{
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+  }
+  .header-title-logo img {
+    max-height: 40px;
+  }
+}
+
 /* logo style ends */
 
 .nav-menu {
@@ -122,4 +137,14 @@ body{
 .listing:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.search-nav {
+    color: var(--secondary-color);
+    font-weight: 800;
+    transition: .25s;
+}
+.search-nav:hover {
+    color: var(--primary-color);
+    transition: .5s;
 }
