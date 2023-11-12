@@ -52,7 +52,7 @@ export default function Home() {
         <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl">
           Find your next <span className="text-slate-500">perfect</span>
           <br />
-          Home with with ease
+          Home with ease
         </h1>
         <div className="text-gray-400 text-xs sm:text-sm">
           Clint Estate is the best place to find your next perfect place to

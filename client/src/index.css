@@ -166,8 +166,30 @@ body{
   color:#f1f5f9;
 }
 
+.listing-offer {
+  background: var(--success-color);
+  color:#f1f5f9;
+
+}
+
+.listing-item-icon {
+  color: var(--success-color);
+
+}
+
+.listing-title {
+  color: var(--secondary-color);
+
+}
+
 .contact-owner {
   background-color: var(--secondary-color);
+  color: #f1f5f9;
+  text-transform: uppercase;
+}
+
+.search-button{
+  background: var(--secondary-color);
   color: #f1f5f9;
   text-transform: uppercase;
 }
