@@ -139,7 +139,7 @@ export default function Search() {
               type="text"
               id="searchTerm"
               placeholder="Search..."
-              className="border rounded-lg p-3 w-full"
+              className="search-term border rounded-lg p-3 w-full"
               value={sidebardata.searchTerm}
               onChange={handleChange}
             />
@@ -216,15 +216,17 @@ export default function Search() {
               onChange={handleChange}
               defaultValue={"created_at_desc"}
               id="sort_order"
-              className="border rounded-lg p-3"
+              className="sort sort-value p-3"
             >
               <option value="regularPrice_desc">Price high to low</option>
-              <option value="regularPrice_asc">Price low to hight</option>
+              <option value="regularPrice_asc">Price low to high</option>
               <option value="createdAt_desc">Latest</option>
               <option value="createdAt_asc">Oldest</option>
             </select>
           </div>
-          <button className="search-button p-3 rounded-lg  hover:opacity-95">Search</button>
+          <button className="search-button p-3 rounded-lg  hover:opacity-95">
+            Search
+          </button>
         </form>
       </div>
       <div className="flex-1">
@@ -250,7 +252,7 @@ export default function Search() {
           {showMore && (
             <button
               onClick={onShowMoreClick}
-              className="text-green-700 hover:underline p-7 text-center w-full"
+              className="listing-item-icon hover:underline p-7 text-center w-full"
             >
               Show more
             </button>

@@ -190,6 +190,35 @@ body{
 
 .search-button{
   background: var(--secondary-color);
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.search-button:hover {
+  color: #f1f5f9;
+}
+
+.sort {
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.sort:focus {
+  outline: none;
+}.search-term:focus {
+  outline: none;
+}
+
+.sort-value {
+  color: var(--secondary-color);
+  font-weight: 400;
+}
+
+.contact {
+  background: var(--secondary-color);
   color: #f1f5f9;
   text-transform: uppercase;
+  padding:12px;
+  border-radius: 8px;
+  text-align:center;
 }

@@ -93,7 +93,7 @@ export default function Home() {
                 Recent offers
               </h2>
               <Link
-                className="text-sm text-blue-800 hover:underline"
+                className="search-nav text-xs sm:text-sm "
                 to={"/search?offer=true"}
               >
                 Show more offers
@@ -109,13 +109,10 @@ export default function Home() {
         {rentListings && rentListings.length > 0 && (
           <div className="">
             <div className="my-3">
-              <h2 className="text-2xl font-semibold text-slate-600">
+              <h2 className="text-2xl fonttext-xs sm:text-sm -semibold text-slate-600">
                 Recent places for rent
               </h2>
-              <Link
-                className="text-sm text-blue-800 hover:underline"
-                to={"/search?type=rent"}
-              >
+              <Link className="search-nav " to={"/search?type=rent"}>
                 Show more places for rent
               </Link>
             </div>
@@ -133,7 +130,7 @@ export default function Home() {
                 Recent places for sale
               </h2>
               <Link
-                className="text-sm text-blue-800 hover:underline"
+                className="search-nav text-xs sm:text-sm "
                 to={"/search?type=sale"}
               >
                 Show more places for sale
