@@ -14,7 +14,7 @@ mongoose
     console.log("Successfully connected to the database!");
   })
   .catch((err) => {
-    console.log(err);
+    console.log(error);
   });
 
 const __dirname = path.resolve();
@@ -39,9 +39,9 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
-app.use((err, req, res, next) => {
+app.use((error, req, res, next) => {
   const statusCode = err.statusCode || 500;
-  const message = err.message || "Internal Server Error";
+  const message = error.message || "Internal Server Error";
   return res.status(statusCode).json({
     success: false,
     statusCode,
